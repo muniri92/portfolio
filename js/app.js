@@ -1,4 +1,4 @@
-var projects = [];
+var project = [];
 
 function Project (opts) {
   this.title = opts.title;
@@ -11,19 +11,19 @@ function Project (opts) {
 Project.prototype.toHtml = function () {
   var $newProject = $('article.template').clone();
   $newProject.removeClass('template');
-  $newProject.find('div.img').html('<img src="' + this.image + '">');
-  $newProject.find('header > h1').text(this.title);
-  $newProject.find('#ghRepo a').attr('href', this.gitRepo);
-  $newProject.find('#website').html('<a href= "' + this.url + '">Project Link</a>');
-  $newProject.find('.site-body').html(this.body);
+  $newProject.find('img').attr('src', this.image);
+  $newProject.find('#project_name').text(this.title);
+  $newProject.find('#git_Repo a').attr('href', this.gitRepo);
+  $newProject.find('#website a').attr('href', this.url);
+  $newProject.find('.site_body').html(this.body);
   $newProject.append('<hr>');
   return $newProject;
 };
 
-rawProject.forEach(function(ele) {
-  projects.push(new Project(ele));
+rawProject.forEach(function(e) {
+  project.push(new Project(e));
 });
 
-projects.forEach(function(a) {
-  $('#projects').append(a.toHtml());
+project.forEach(function(a) {
+  $('#project').append(a.toHtml());
 });

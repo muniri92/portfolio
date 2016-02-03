@@ -1,14 +1,25 @@
+/* ==== TITLE ==== */
+
 #name {
   display: flex;
   justify-content: center;
-  font-size: 100px;
-  margin-top: -5px;
+  font-size: 50px;
+  margin-top: 20px;
   margin-bottom: -10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.main-nav {
+/*==========================*/
+hr {
+  margin: 1em;
+  width: 80%;
+}
+/*==========================*/
+
+/* ==== NAVIGATION ==== */
+
+.main_nav {
   display: flex;
-  /*align-text: center;*/
   justify-content: center;
   padding: 0px 10px 20px 10px;
   margin: 10px 10px -35px 10px;
@@ -18,37 +29,95 @@ nav ul {
   display: flex;
   align-self: center;
   font-family: 'Montserrat', sans-serif;
-  background-color: none;
 }
 
 nav ul li {
   display: flex;
   list-style: none;
-  background-color: none;
   margin: 10px 0px 10px 0px;
   padding: 0px 10px 0px 10px;
 }
+
+a {
+  color: #444;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(199, 158, 13);
+}
+
+/* ==== MAIN BODY ==== */
 
 main {
   display: flex;
   flex-direction: column;
 }
 
-article {
+section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;;
 }
 
-#projectLinks {
+.template {
+  display: none;
+}
+
+#project {
   display: flex;
   flex-direction: column;
 }
 
-#website, #ghRepo {
+#box {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_prog {
+  display: flex;
+  flex-direction: column;
+}
+
+#project_links {
+  display: flex;
+  flex-direction: column;
+}
+
+#website, #git_Repo {
   display: flex;
 }
 
-.flexItems {
+/* ==== ABOUT ==== */
+
+#porfolio {
   display: flex;
-  border: 1px solid black;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+#porfolio_about > h1 {
+  display: flex;
+}
+
+#porfolio_about > ul li {
+  display: flex;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==== FOOTER ==== */
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }

@@ -54,12 +54,12 @@ var projectView = {};
 
 
 projectView.handleMainNav = function() {
-  $('.main-nav').on('click', 'li', function() {
-    $('.tab-content').hide();
-    $('#' + $(this).data('content') + '').show();
-    console.log($(this).data('content'));
+  $('.main_nav').on('click', 'li', function() {
+    $('.tab_content').hide();
+    $('#' + $(this).data('link') + '').show();
+    console.log($(this).data('link'));
   });
-  $('.main-nav .tab:first').click();
+  $('.main_nav .tab:first').click();
 };
 projectView.handleMainNav();
 
