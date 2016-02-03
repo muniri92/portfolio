@@ -10,10 +10,12 @@
 }
 
 /*==========================*/
+
 hr {
   margin: 1em;
   width: 80%;
 }
+
 /*==========================*/
 
 /* ==== NAVIGATION ==== */
@@ -114,7 +116,9 @@ section {
 
 /* ==== FOOTER ==== */
 footer {
-  position: absolute;
+  position: fixed;
+  color: white;
+  background-color: #444;
   right: 0;
   bottom: 0;
   left: 0;
