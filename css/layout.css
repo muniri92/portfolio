@@ -1,0 +1,26 @@
+/*==========================*/
+/* HEADER */
+
+.site_header {
+}
+
+/*==========================*/
+/* BODY */
+
+.main_nav {
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px 20px 10px;
+  margin: 10px 10px -35px 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/*==========================*/
+/* FOOTER */
+
+footer {
+}
