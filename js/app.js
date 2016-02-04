@@ -14,7 +14,7 @@ Project.prototype.toHtml = function () {
   $newProject.find('img').attr('src', this.image);
   $newProject.find('#project_name').text(this.title);
   $newProject.find('#git_Repo a').attr('href', this.gitRepo);
-  $newProject.find('#website a').attr('href', this.url);
+  $newProject.find('#launch_site a').attr('href', this.url);
   $newProject.find('.site_body').html(this.body);
   $newProject.append('<hr>');
   return $newProject;
