@@ -63,7 +63,7 @@ a:hover {
 
 section {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
 }
 
 .template {
@@ -147,12 +147,28 @@ hr {
 /*==========================*/
 /* ==== MEDIA QUERIES ====*/
 
-@@media only screen and (min-width: 500px) {
-  .main_nav {
-    display: inline-flex;
+@media only screen and (min-width: 540px) {
+  .icon-menu {
+    display: none;
+    clear:right;
 
   }
+  .main_nav {
+    display: flex;
+    justify-content: center;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
 
+  #nav {
+    display: inline-flex;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .main_nav:hover ul {
+    display: none;
+  }
 
 
 }
