@@ -1,28 +1,14 @@
 /*==========================*/
 /* HEADER */
 
-/*.site_header {
-}*/
 
 /*==========================*/
 /* BODY */
-
-.main_nav {
-  display: flex;
-  justify-content: center;
-  padding: 0px 10px 20px 10px;
-  margin: 10px 10px -35px 10px;
-}
 
 main {
   display: flex;
   flex-direction: column;
   margin: 30px 30px 1px 30px;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
 }
 
 /* = WEB LINKS = */
@@ -35,20 +21,6 @@ a {
 a:hover {
   color: rgb(199, 158, 13);
 }
-
-/*==========================*/
-/* ASK BRIAN IF <hr> TAG IS OK */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*==========================*/
 
 /*==========================*/
 /* FOOTER */

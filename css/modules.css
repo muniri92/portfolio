@@ -13,22 +13,6 @@
 /*==========================*/
 /* ==== NAVIGATION ==== */
 
-.main_nav {
-  position: relative;
-  float: right;
-}
-
-.icon-menu {
-  display: block;
-  float: left;
-  font-size: 32px;
-  padding: 0px 0px 20px 0px;
-}
-
-.main_nav:hover ul {
-  display: block;
-  flex-direction: row;
-}
 
 nav ul {
   display: none;
@@ -38,12 +22,11 @@ nav ul {
 }
 
 nav ul li {
-  display: block;
+  display: flex;
   list-style: none;
   margin: 10px 0px 10px 0px;
   padding: 0px 10px 0px 10px;
 }
-
 /*==========================*/
 /* ==== MAIN BODY ==== */
 
@@ -117,12 +100,10 @@ nav ul li {
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .resume_header {
   display: flex;
   justify-content: center;
 }
-
 
 /* ==== MEDIA QUERIES ====*/
 
@@ -131,28 +112,30 @@ nav ul li {
   /* = HAMBURGER BAR = */
   .icon-menu {
     display: none;
-    clear:right;
+    clear: right;
+  }
+
+  .main_nav {
+    display: flex;
+    justify-content: space-around;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #nav {
+    display: inline-flex;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .main_nav:hover ul {
+    display: none;
   }
 
   .site_header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
-
-  .main_nav {
-    display: flex;
-    justify-content: center;
-    clear: both;
-    font-family: 'Montserrat', sans-serif;
-  }
-  #nav {
-    display: inline-flex;
-    clear: both;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .main_nav:hover ul {
-    display: none;
   }
 
   /*==========================*/
