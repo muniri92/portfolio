@@ -10,7 +10,6 @@ function Project (opts) {
   this.startDate = opts.startDate;
 };
 
-
 Project.prototype.toHtml = function() {
   var template = Handlebars.compile($('#project_template').text());
   this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);

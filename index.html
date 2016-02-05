@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/modules.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+    <!-- HANDLEBAR SCRIPT -->
 
     <script id="project_template" type="text/x-handlebars-template">
       <article id="project_{{id}}">
@@ -33,14 +34,18 @@
           </section>
         </section>
       </article>
+      <hr>
     </script>
+
   </head>
   <body>
+
     <!-- TITLE -->
     <header class="site_header">
       <h1 id="name">
         Munir Ibrahim
       </h1>
+
       <!-- NAVIGATION -->
       <nav class="main_nav">
         <ul id="nav" >
@@ -54,12 +59,73 @@
         </span>
       </nav>
     </header>
+
     <!-- MAIN BODY -->
     <main id="main">
       <!-- PROJECT TEMPLATE -->
       <section id="projects" class="tab_content"></section>
+
       <!-- ABOUT ME -->
       <section id="about" class="tab_content">
+        <!-- <div id="welcome">
+          <header id="porfolio">
+            <h5>Welcome to my Portfolio</h5>
+          </header>
+          <article id="porfolio_about">
+            <h5>Some of my interests:</h5>
+            <ul>
+              <li>Combining Software Development and Mathematics</li>
+              <li>Creating amazing websites that are both stylish, responsive and user friendly.</li>
+              <li>Hanging with my family and my squad!</li>
+            </ul>
+          </article>
+        </div> -->
+        <article class="vitae">
+          <header>
+            <h4 class="resume_header">CURRICULUM VITAE</h4>
+          </header>
+          <section>
+            <article class="education">
+              <h4>EDUCATION</h4>
+              <div>
+                <p>UNIVERSITY OF WASHINGTON - SEATTLE</p>
+                <h5>BACHELOR OF ARTS IN MATHEMATICS</h5>
+                <h6>
+                  APPLIED MATHEMATICS MINOR<br>
+                  DIVERSITY MINOR
+                </h6>
+              </div>
+              <hr>
+              <section class="code_fellows">
+                <h5 class="resume_header">CODE FELLOWS</h5>
+                <div class="">
+                  <h6>CODE FELLOWS 201:</h6>
+                  <p>Foundations of Software Development</p>
+                </div>
+
+                <div class="">
+                  <h6>CODE FELLOWS 301:</h6>
+                  <p>Intermediate Software Development</p>
+                </div>
+
+                <div class="">
+                  <h6>CODE FELLOWS 401:</h6>
+                  <p>Advanced Software Development in Python</p>
+                </div>
+              </section>
+
+            </article>
+            <hr>
+            <article class="work">
+              <h4 class="resume_header">WORK</h4>
+              <div class="">
+                <h5></h5>
+              </div>
+            </article>
+
+          </section>
+        </article>
+        <hr>
         <div id="welcome">
           <header id="porfolio">
             <h5>Welcome to my Portfolio</h5>
@@ -73,31 +139,6 @@
             </ul>
           </article>
         </div>
-        <article class="vitae">
-          <hr>
-          <header>
-            <h2>CURRICULUM VITAE</h1>
-          </header>
-          <section>
-            <article class="education">
-              <h4> EDUCATION</h4>
-              <div class="">
-                <h5>BACHELOR OF ARTS IN MATHEMATICS</h5>
-                <h6>
-                  APPLIED MATHEMATICS MINOR<br>
-                  DIVERSITY MINOR
-                </h6>
-              </div>
-            </article>
-            <hr>
-            <article class="work">
-              <h4> WORK</h4>
-              <div class="">
-                <h5></h5>
-              </div>
-            </article>
-          </section>
-        </article>
       </section>
     </main>
     <!-- FOOTER -->
