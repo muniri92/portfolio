@@ -13,23 +13,6 @@
 /*==========================*/
 /* ==== NAVIGATION ==== */
 
-.main_nav {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.icon-menu {
-  display: block;
-  float: right;
-  font-size: 32px;
-  padding: 0px 0px 20px 0px;
-}
-
-.main_nav:hover ul {
-  display: block;
-  float: right;
-  flex-direction: row;
-}
 
 nav ul {
   display: none;
@@ -44,45 +27,34 @@ nav ul li {
   margin: 10px 0px 10px 0px;
   padding: 0px 10px 0px 10px;
 }
-
-/* = WEB LINKS = */
-
-a {
-  color: #444;
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgb(199, 158, 13);
-}
-
 /*==========================*/
 /* ==== MAIN BODY ==== */
 
 /* = PROJECT PAGE = */
-
-section {
-  display: flex;
-  flex-direction: column;
-}
 
 .template {
   display: none;
 }
 
 #project {
+  display: block;
+  flex-direction: column;
+}
+
+.project_container {
   display: flex;
   flex-direction: column;
 }
 
-#project_container {
+.project_img  {
   display: flex;
   flex-direction: column;
+  /*width: 100%;*/
 }
 
-.project_img {
-  display: flex;
-  flex-direction: column;
+.project_img img {
+  width: 100%;
+  height: 1;
 }
 
 .project_info {
@@ -91,16 +63,16 @@ section {
   justify-content: center;
 }
 
-#project_links {
+.project_links {
   display: flex;
   flex-direction: column;
 }
 
-#git_Repo {
+.git_Repo {
   display: flex;
 }
 
-#launch_site {
+.launch_site {
   display: flex;
 }
 
@@ -128,75 +100,59 @@ section {
   font-family: 'Montserrat', sans-serif;
 }
 
-/*==========================*/
-/* ==== FOOTER ==== */
-
-footer {
-  position: fixed;
-  color: white;
-  background-color: #444;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
+.resume_header {
+  display: flex;
+  justify-content: center;
 }
 
-/*==========================*/
-/* ASK BRIAN IF <hr> TAG IS OK */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*==========================*/
 /* ==== MEDIA QUERIES ====*/
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 650px) {
   /*==========================*/
   /* = HAMBURGER BAR = */
   .icon-menu {
     display: none;
-    clear:right;
+    clear: right;
   }
+
   .main_nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     clear: both;
     font-family: 'Montserrat', sans-serif;
   }
+
   #nav {
     display: inline-flex;
     clear: both;
     font-family: 'Montserrat', sans-serif;
   }
+
   .main_nav:hover ul {
     display: none;
   }
 
+  .site_header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   /*==========================*/
   /* = RESPONSIVE IMAGES = */
-  #project_container {
+  .project_container {
     display: flex;
     flex-direction: row;
   }
   img {
   height: 135px;
-  width: 250px;;
+  width: 250px;
+  margin-top: 50px;
   /*padding: 5px;*/
   }
 
-
-  #project_name {
+  .project_name {
     display: flex;
     justify-content: center;
   }
-
-
-
 }
