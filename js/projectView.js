@@ -11,7 +11,7 @@ projectView.handleMainNav = function() {
 };
 projectView.handleMainNav();
 
-//
+
 // projectView.setTeasers = function() {
 //   $('.project-body *:nth-of-type(n+2)').hide();
 //   $('.read-on').on('click', function(e) {
