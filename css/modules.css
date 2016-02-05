@@ -1,0 +1,202 @@
+/*==========================*/
+/* ==== TITLE ==== */
+
+#name {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*==========================*/
+/* ==== NAVIGATION ==== */
+
+.main_nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-menu {
+  display: block;
+  float: right;
+  font-size: 32px;
+  padding: 0px 0px 20px 0px;
+}
+
+.main_nav:hover ul {
+  display: block;
+  float: right;
+  flex-direction: row;
+}
+
+nav ul {
+  display: none;
+  align-self: center;
+  clear: both;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li {
+  display: flex;
+  list-style: none;
+  margin: 10px 0px 10px 0px;
+  padding: 0px 10px 0px 10px;
+}
+
+/* = WEB LINKS = */
+
+a {
+  color: #444;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(199, 158, 13);
+}
+
+/*==========================*/
+/* ==== MAIN BODY ==== */
+
+/* = PROJECT PAGE = */
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.template {
+  display: none;
+}
+
+#project {
+  display: flex;
+  flex-direction: column;
+}
+
+#project_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.project_img {
+  display: flex;
+  flex-direction: column;
+}
+
+.project_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#project_links {
+  display: flex;
+  flex-direction: column;
+}
+
+#git_Repo {
+  display: flex;
+}
+
+#launch_site {
+  display: flex;
+}
+
+/* = ABOUT PAGE = */
+
+#welcome {
+  /*display: flex;*/
+
+}
+
+#porfolio {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#porfolio_about > h1 {
+  display: flex;
+}
+
+#porfolio_about > ul li {
+  display: flex;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*==========================*/
+/* ==== FOOTER ==== */
+
+footer {
+  position: fixed;
+  color: white;
+  background-color: #444;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+/*==========================*/
+/* ASK BRIAN IF <hr> TAG IS OK */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*==========================*/
+/* ==== MEDIA QUERIES ====*/
+
+@media only screen and (min-width: 540px) {
+  /*==========================*/
+  /* = HAMBURGER BAR = */
+  .icon-menu {
+    display: none;
+    clear:right;
+  }
+  .main_nav {
+    display: flex;
+    justify-content: center;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #nav {
+    display: inline-flex;
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .main_nav:hover ul {
+    display: none;
+  }
+
+  /*==========================*/
+  /* = RESPONSIVE IMAGES = */
+  #project_container {
+    display: flex;
+    flex-direction: row;
+  }
+  img {
+  height: 135px;
+  width: 250px;;
+  /*padding: 5px;*/
+  }
+
+
+  #project_name {
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+}
