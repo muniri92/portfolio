@@ -1,6 +1,64 @@
-/*==========================*/
-/* ==== TITLE ==== */
+/*===========================================*/
+/* ======== PROJECT PAGE ======== */
 
+/*section class="project_container*/
+.project_container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*div class="project_img"*/
+.project_img  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*section class="project_info"*/
+.project_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*ul class="project_links"*/
+.project_links {
+  display: flex;
+  flex-direction: column;
+}
+
+/*li class="git_Repo"*/
+.git_Repo {
+  display: flex;
+}
+
+/*li class="launch_site"*/
+.launch_site {
+  display: flex;
+}
+
+/*div class="project_body"*/
+.project_body {
+  outline: dotted 1px #444;
+}
+
+/*===========================================*/
+
+/* ======== TITLE ======== */
+
+/*header class="top_header"*/
+.top_header {
+  position: relative;
+  color: white;
+  background-color: #444;
+  right: 0;
+  top: 0;
+  left: 0;
+  text-align: left;
+  padding: -5px 0px 0px 0px;
+}
+
+/*h1 id="name"*/
 #name {
   display: flex;
   justify-content: center;
@@ -10,14 +68,17 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/*==========================*/
-/* ==== NAVIGATION ==== */
+/*===========================================*/
 
+/* ======== NAVIGATION ======== */
+
+/*nav class="main_nav"*/
 .main_nav {
   display: flex;
   justify-content: flex-start;
 }
 
+/*div class="icon-menu"*/
 .icon-menu {
   display: block;
   float: right;
@@ -31,75 +92,34 @@
   flex-direction: row;
 }
 
-nav ul {
-  display: none;
-  align-self: center;
-  clear: both;
-  font-family: 'Montserrat', sans-serif;
-}
+/*===========================================*/
 
-nav ul li {
-  display: flex;
-  list-style: none;
-  margin: 10px 0px 10px 0px;
-  padding: 0px 10px 0px 10px;
-}
-/*==========================*/
-/* ==== MAIN BODY ==== */
+/* ============ MAIN BODY ============*/
 
-/* = PROJECT PAGE = */
+/* ======== RESUME ========*/
 
-.template {
-  display: none;
-}
-
-#project {
-  display: block;
-  flex-direction: column;
-}
-
-.project_container {
-  display: flex;
-  flex-direction: column;
-}
-
-.project_img  {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-img {
+/*h4 class="resume_header"*/
+.resume_header {
   display: flex;
   justify-content: center;
-  max-width: 220px;
-  height: auto;
 }
 
-.project_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/* ==== EDUCATION ==== */
 
-.project_links {
-  display: flex;
-  flex-direction: column;
-}
 
-.git_Repo {
-  display: flex;
-}
+/* ==== COLLEGE ==== */
 
-.launch_site {
-  display: flex;
-}
 
-/* = ABOUT PAGE = */
+/* ==== CODE FELLOWS ==== */
+
+
+/* ==== WORK ==== */
+
+
+/* ==== ABOUT ==== */
 
 #welcome {
-  /*display: flex;*/
-
+  display: flex;
 }
 
 #porfolio {
@@ -119,75 +139,22 @@ img {
   font-family: 'Montserrat', sans-serif;
 }
 
-.resume_header {
-  display: flex;
-  justify-content: center;
-}
+
+/*===========================================*/
+
+/* ======== SPACEBAR AND CLEARFIX ======== */
 
 .space {
   width: 100px;
   height: 4px;
-  background-color: black;
+  background-color: rgb(199, 158, 13);
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 25px;
 }
 
-/* ==== MEDIA QUERIES ====*/
-
-@media only screen and (min-width: 650px) {
-  /*==========================*/
-  /* = HAMBURGER BAR = */
-
-  .icon-menu {
-    display: none;
-    clear: right;
-  }
-
-  .main_nav {
-    display: flex;
-    justify-content: space-around;
-    clear: both;
-    /*font-family: 'Montserrat', sans-serif;*/
-  }
-
-  #nav {
-    display: inline-flex;
-    clear: both;
-    /*font-family: 'Montserrat', sans-serif;*/
-  }
-
-  .main_nav:hover ul {
-    display: none;
-  }
-
-  .site_header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  /*==========================*/
-  /* = RESPONSIVE IMAGES = */
-  .project_container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .project_img {
-  height: 135px;
-  width: 250px;
-  margin-top: 50px;
-  /*padding: 5px;*/
-  }
-
-  img {
-    display: flex;
-    justify-content: center;
-  }
-
-  .project_name {
-    display: flex;
-    justify-content: center;
-  }
+.clearfix {
+  clear:both;
 }
+
+/*===========================================*/

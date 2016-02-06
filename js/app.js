@@ -1,4 +1,5 @@
 var project = [];
+var education = [];
 
 function Project (opts) {
   this.id = opts.id;
@@ -27,4 +28,27 @@ rawProject.forEach(function(e) {
 
 project.forEach(function(a) {
   $('#projects').append(a.toHtml());
+});
+
+//////////////////////////////////////////////
+
+function Education (edu) {
+  this.id = edu.id;
+  this.location = edu.location;
+  this.degree = edu.degree;
+  this.body = edu.body;
+  this.startDate = edu.startDate;
+};
+
+Education.prototype.toHtml = function() {
+  var template = Handlebars.compile($('#edu_template').text());
+  return template(this);
+};
+
+rawEducation.forEach(function(e) {
+  education.push(new Education(e));
+});
+
+education.forEach(function(a) {
+  $('#edu').append(a.toHtml());
 });

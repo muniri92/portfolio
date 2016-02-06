@@ -1,3 +1,4 @@
+// PROJECT OBJECTS ARRAY
 var rawProject = [
   {
     id: 1,
@@ -16,5 +17,29 @@ var rawProject = [
     url: 'http://heyduckd.github.io/equip/',
     body: '<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother\'s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>',
     startDate: '2016-01-24'
+  },
+];
+
+//////////////////////////////////////////////
+
+// EDUCATION OBJECTS ARRAY
+var rawEducation = [
+  {
+    id: 1,
+    location: 'UNIVERSITY OF WASHINGTON - SEATTLE',
+    degree: 'BA IN MATHEMATICS',
+    body: '<h6>- APPLIED MATHEMATICS MINOR<br>- DIVERSITY MINOR</h6><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    id: 2,
+    location: 'CODE FELLOWS',
+    degree: 'Code 201: Foundations of Software Development',
+    body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+  },
+  {
+    id: 3,
+    location: 'CODE FELLOWS',
+    degree: 'Code 301: Intermediate Software Development',
+    body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
   },
 ];

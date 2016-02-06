@@ -5,7 +5,6 @@ projectView.handleMainNav = function() {
   $('.main_nav').on('click', 'li', function() {
     $('.tab_content').hide();
     $('#' + $(this).data('link') + '').show();
-    console.log($(this).data('link'));
   });
   $('.main_nav .tab:first').click();
 };

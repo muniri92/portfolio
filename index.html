@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/screen-size.css">
     <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-
     <!-- PROJECT TEMPLATE -->
     <script id="project_template" type="text/x-handlebars-template">
       <article id="project_{{id}}">
@@ -38,9 +38,18 @@
       </article>
       <hr>
     </script>
+    <script id="edu_template" type="text/x-handlebars-template">
+      <section id="edu_{{id}}">
+        <article class="edu_container">
+          <h5 class="edu_location">{{location}}</h4>
+          <h6 class="edu_class">{{degree}}</h6>
+          <div class="edu_body">{{{body}}}</div>
+        </article>
+      </section>
+    </script>
   </head>
-  <body>
 
+  <body>
     <!-- TITLE -->
     <header class="top_header">
       <div class="">
@@ -70,52 +79,20 @@
       <section id="projects" class="tab_content"></section>
       <!-- RESUME -->
       <section id="about" class="tab_content">
-        </div>
         <article class="vitae">
           <header>
             <h4 class="resume_header">CURRICULUM VITAE</h4>
           </header>
           <div class="space"></div>
           <!-- EDUCATION -->
-          <section>
-            <article class="education">
-              <h5 class="resume_header">EDUCATION</h5>
-              <div>
-                <p>UNIVERSITY OF WASHINGTON - SEATTLE</p>
-                <h5>BA IN MATHEMATICS</h5>
-                <h6>
-                  APPLIED MATHEMATICS MINOR<br>
-                  DIVERSITY MINOR
-                </h6>
-              </div>
-              <hr>
-              <!-- CODE FELLOWS -->
-              <section class="code_fellows">
-                <h5 class="resume_header">CODE FELLOWS</h5>
-                <div id="code_201">
-                  <h6>CODE FELLOWS 201:</h6>
-                  <p>Foundations of Software Development</p>
-                </div>
-
-                <div id="code_301">
-                  <h6>CODE FELLOWS 301:</h6>
-                  <p>Intermediate Software Development</p>
-                </div>
-                <div id="code_401">
-                  <h6>CODE FELLOWS 401:</h6>
-                  <p>Advanced Software Development in Python</p>
-                </div>
-              </section>
-            </article>
-            <hr>
-            <!-- WORK -->
-            <article class="work">
-              <h4 class="resume_header">WORK</h4>
-              <div class="">
-                <h5></h5>
-              </div>
-            </article>
-          </section>
+          <section id="edu"></section>
+          <!-- WORK -->
+          <article class="work">
+            <h4 class="resume_header">WORK</h4>
+            <div class="">
+              <h5></h5>
+            </div>
+          </article>
         </article>
         <hr>
         <!-- ABOUT SECTION -->

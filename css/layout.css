@@ -1,19 +1,28 @@
-/*==========================*/
-/* HEADER */
+/*===========================================*/
+/* ==== HEADER ==== */
 
-.top_header {
-  position: relative;
-  color: white;
-  background-color: #444;
-  right: 0;
-  top: 0;
-  left: 0;
-  text-align: left;
-  padding: -5px 0px 0px 0px;
+img {
+  display: flex;
+  justify-content: center;
+  max-width: 220px;
+  height: auto;
 }
 
-/*==========================*/
-/* BODY */
+nav ul {
+  display: none;
+  align-self: center;
+  clear: both;
+  font-family: 'Montserrat', sans-serif;
+}
+nav ul li {
+  display: flex;
+  list-style: none;
+  margin: 10px 0px 10px 0px;
+  padding: 0px 10px 0px 10px;
+}
+
+/*===========================================*/
+/* ==== BODY ==== */
 
 body {
   display: flex;
@@ -26,7 +35,7 @@ main {
   margin: 30px 30px 1px 30px;
 }
 
-/* = WEB LINKS = */
+/* ==== WEB LINKS ==== */
 
 a {
   color: #444;
@@ -37,8 +46,8 @@ a:hover {
   color: rgb(199, 158, 13);
 }
 
-/*==========================*/
-/* FOOTER */
+/*===========================================*/
+/* ==== FOOTER ==== */
 
 footer {
   position: relative;
