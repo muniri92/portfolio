@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   font-size: 50px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: -10px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -22,7 +22,7 @@
   display: block;
   float: right;
   font-size: 32px;
-  padding: 0px 0px 20px 0px;
+  padding: 25px 0px 0px 0px;
 }
 
 .main_nav:hover ul {
@@ -65,12 +65,14 @@ nav ul li {
 
 .project_img  {
   display: flex;
-  flex-direction: column;
-  /*width: 100%;*/
+  flex-direction: row;
+  justify-content: center;
 }
 
-.project_img img {
-  max-width: 200px;
+img {
+  display: flex;
+  justify-content: center;
+  max-width: 220px;
   height: auto;
 }
 
@@ -122,11 +124,21 @@ nav ul li {
   justify-content: center;
 }
 
+.space {
+  width: 100px;
+  height: 4px;
+  background-color: black;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
 /* ==== MEDIA QUERIES ====*/
 
 @media only screen and (min-width: 650px) {
   /*==========================*/
   /* = HAMBURGER BAR = */
+
   .icon-menu {
     display: none;
     clear: right;
@@ -136,13 +148,13 @@ nav ul li {
     display: flex;
     justify-content: space-around;
     clear: both;
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
   }
 
   #nav {
     display: inline-flex;
     clear: both;
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
   }
 
   .main_nav:hover ul {
@@ -161,11 +173,17 @@ nav ul li {
     display: flex;
     flex-direction: row;
   }
-  img {
+
+  .project_img {
   height: 135px;
   width: 250px;
   margin-top: 50px;
   /*padding: 5px;*/
+  }
+
+  img {
+    display: flex;
+    justify-content: center;
   }
 
   .project_name {
