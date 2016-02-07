@@ -1,5 +1,5 @@
 /*===========================================*/
-/* ======== PROJECT PAGE ======== */
+/* ======== PROJECT TEMPLATE ======== */
 
 /*section class="project_container*/
 .project_container {
@@ -41,6 +41,32 @@
 .project_body {
   outline: dotted 1px #444;
 }
+
+
+/*===========================================*/
+
+/* ======== EDUCATION TEMPLATE ======== */
+
+.resume_title {
+  font-size: 22px;
+}
+
+.edu_class {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.edu_location {
+  font-size: 12px;
+}
+
+.edu_body {
+  font-size: 14px;
+}
+
+
+
 
 /*===========================================*/
 
@@ -111,33 +137,6 @@
 
 
 /* ==== CODE FELLOWS ==== */
-
-
-/* ==== WORK ==== */
-
-
-/* ==== ABOUT ==== */
-
-#welcome {
-  display: flex;
-}
-
-#porfolio {
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#porfolio_about > h1 {
-  display: flex;
-}
-
-#porfolio_about > ul li {
-  display: flex;
-  list-style: none;
-  font-family: 'Montserrat', sans-serif;
-}
 
 
 /*===========================================*/

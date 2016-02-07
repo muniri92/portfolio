@@ -41,10 +41,12 @@
     <script id="edu_template" type="text/x-handlebars-template">
       <section id="edu_{{id}}">
         <article class="edu_container">
-          <h5 class="edu_location">{{location}}</h4>
-          <h6 class="edu_class">{{degree}}</h6>
+          <h6 class="edu_class"><strong>{{{degree}}}</strong></h6>
+          <h6 class="edu_location icon-file-text2">{{{location}}}</h6>
           <div class="edu_body">{{{body}}}</div>
         </article>
+        <div class="edu_date"><em>{{date}}</em></div>
+        <hr>
       </section>
     </script>
   </head>
@@ -84,31 +86,12 @@
             <h4 class="resume_header">CURRICULUM VITAE</h4>
           </header>
           <div class="space"></div>
-          <!-- EDUCATION -->
-          <section id="edu"></section>
-          <!-- WORK -->
-          <article class="work">
-            <h4 class="resume_header">WORK</h4>
-            <div class="">
-              <h5></h5>
-            </div>
-          </article>
+          <!-- APPEND EDUCATION SECTION -->
+          <div class="edu_div">
+            <h4 class=resume_title>EDUCATION</h4>
+            <section id="edu"></section>
+          </div>
         </article>
-        <hr>
-        <!-- ABOUT SECTION -->
-        <div id="welcome">
-          <header id="porfolio">
-            <h5>Welcome to my Portfolio</h5>
-          </header>
-          <article id="porfolio_about">
-            <h5>Some of my interests:</h5>
-            <ul>
-              <li>Combining Software Development and Mathematics</li>
-              <li>Creating amazing websites that are both stylish, responsive and user friendly.</li>
-              <li>Hanging with my family and my squad!</li>
-            </ul>
-          </article>
-        </div>
       </section>
     </main>
 

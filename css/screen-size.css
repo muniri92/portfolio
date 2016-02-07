@@ -15,13 +15,12 @@
     display: flex;
     justify-content: space-around;
     clear: both;
-    /*font-family: 'Montserrat', sans-serif;*/
   }
 
   #nav {
     display: inline-flex;
     clear: both;
-    /*font-family: 'Montserrat', sans-serif;*/
+    margin: 0px;
   }
 
   .main_nav:hover ul {
@@ -57,4 +56,48 @@
     display: flex;
     justify-content: center;
   }
+
+
+  /*===========================================*/
+  /* ==== FADE IN ==== */
+
+
+
+  /*===========================================*/
+
+  .edu_div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .edu {
+    
+  }
+
+  .resume_title {
+    font-size: 22px;
+  }
+
+  .edu_container {
+
+  }
+
+  .edu_class {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  .edu_location {
+    font-size: 14px;
+  }
+
+  .edu_body {
+    font-size: 14px;
+  }
+
+
+
+
+
 }

@@ -37,7 +37,7 @@ function Education (edu) {
   this.location = edu.location;
   this.degree = edu.degree;
   this.body = edu.body;
-  this.startDate = edu.startDate;
+  this.date = edu.date;
 };
 
 Education.prototype.toHtml = function() {
