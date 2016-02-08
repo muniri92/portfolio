@@ -13,8 +13,9 @@
 
   .main_nav {
     display: flex;
+    margin-top: 10px;
     justify-content: space-around;
-    clear: both;
+    /*clear: both;*/
   }
 
   #nav {
@@ -41,9 +42,9 @@
   }
 
   .project_img {
-  height: 135px;
-  width: 250px;
-  margin-top: 50px;
+    height: 135px;
+    width: 250px;
+    margin-top: 50px;
   /*padding: 5px;*/
   }
 
@@ -55,11 +56,18 @@
   .project_name {
     display: flex;
     justify-content: center;
+    padding-right: 172px;
   }
 
   .project_info {
     display: flex;
-    margin: 10px 60px 0px 0px;
+    margin: 10px 80px 0px 0px;
+  }
+
+  .tab_content {
+    display: flex;
+    flex-direction: column;
+    /*margin: 0px 70px 0px 0px;*/
   }
 
 

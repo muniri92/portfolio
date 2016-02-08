@@ -27,7 +27,7 @@ rawProject.forEach(function(e) {
 });
 
 project.forEach(function(a) {
-  $('#projects').append(a.toHtml());
+  $('#project').append(a.toHtml());
 });
 
 //////////////////////////////////////////////

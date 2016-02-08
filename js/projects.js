@@ -48,7 +48,18 @@ var rawEducation = [
 ];
 
 
-$(window).ready(function() {
-  console.log('ready');
-  $('.main_nav').fadeIn(100);
-});
+// $(function () {
+//
+//     $('#brand-nav').hover(function () {
+//         $('#bgimg').fadeOut('fast', function () {
+//             $('#bgimg').attr( 'src', 'img/bg-brand.jpg' );
+//             $('#bgimg').fadeIn('slow');
+//         });
+//     }, function () {
+//         $('#bgimg').fadeOut('fast', function () {
+//             $('#bgimg').attr('src', 'img/bg-home.jpg' );
+//             $('#bgimg').fadeIn('slow');
+//        });
+//     });
+//
+// });
