@@ -10,7 +10,7 @@ projectView.handleMainNav = function() {
 };
 projectView.handleMainNav();
 
-
+// CREATING THE 'READ ON' FUNCTION
 // projectView.setTeasers = function() {
 //   $('.project_body *:nth-of-type(n+2)').hide();
 //   $('.read_on').on('click', function(e) {

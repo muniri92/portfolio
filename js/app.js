@@ -18,6 +18,7 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
+
 rawProject.sort(function(a,b) {
   return (new Date(b.startDate)) - (new Date(a.startDate));
 });

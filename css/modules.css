@@ -81,7 +81,7 @@
   top: 0;
   left: 0;
   text-align: left;
-  padding: -5px 0px 0px 0px;
+  padding: 0px 0px 0px 20px;
 }
 
 /*h1 id="name"*/
@@ -102,6 +102,8 @@
 .main_nav {
   display: flex;
   justify-content: flex-start;
+  margin-left: 5px;
+
 }
 
 /*div class="icon-menu"*/
@@ -109,13 +111,23 @@
   display: block;
   float: right;
   font-size: 32px;
-  padding: 25px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.main_nav li {
+  display: flex;
+  padding:
+  outline: 1px dotted red;
+
 }
 
 .main_nav:hover ul {
   display: block;
   float: right;
   flex-direction: row;
+  justify-content: center;
+  outline: 1px dotted red;
+
 }
 
 /*===========================================*/
