@@ -52,3 +52,5 @@ rawEducation.forEach(function(e) {
 education.forEach(function(a) {
   $('#edu').append(a.toHtml());
 });
+
+//////////////////////////////////////////////

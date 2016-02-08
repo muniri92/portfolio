@@ -40,17 +40,25 @@
     </script>
     <script id="edu_template" type="text/x-handlebars-template">
       <section id="edu_{{id}}">
-        <article class="edu_container">
-          <h6 class="edu_class"><strong>{{{degree}}}</strong></h6>
-          <h6 class="edu_location icon-file-text2">{{{location}}}</h6>
-          <div class="edu_body">{{{body}}}</div>
-        </article>
-        <div class="edu_date"><em>{{date}}</em></div>
-        <hr>
+        <div class="edu_container">
+          <section class="edu_body_container">
+            <article class="body_container">
+              <h6 class="edu_class"><strong>{{{degree}}}</strong></h6>
+              <h6 class="edu_location icon-file-text2">{{{location}}}</h6>
+              <div class="edu_body">{{{body}}}</div>
+            </article>
+            <!-- <hr> -->
+          </section>
+          <article class="date_container">
+            <div class="edu_date"><em>{{date}}</em></div>
+          </article>
+        </div>
       </section>
+      <hr>
     </script>
   </head>
-
+  <!-- MADE A BORDER TO SEPERATE HEAD & BODY -->
+  <!-- ========================================================================= -->
   <body>
     <!-- TITLE -->
     <header class="top_header">

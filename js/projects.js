@@ -26,10 +26,10 @@ var rawProject = [
 var rawEducation = [
   {
     id: 1,
-    degree: 'BA IN MATHEMATICS<br>- APPLIED MATHEMATICS MINOR<br>- DIVERSITY MINOR',
+    degree: 'BACHELOR OF ARTS IN MATHEMATICS<br>- APPLIED MATHEMATICS MINOR<br>- DIVERSITY MINOR',
     location: '<em>UNIVERSITY OF WASHINGTON - SEATTLE</em>',
     body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
-    date: 'Graduation December 2015'
+    date: 'Sept 2010 - Dec 2015'
   },
   {
     id: 2,
@@ -46,3 +46,9 @@ var rawEducation = [
     date: 'Feb-March 2016'
   },
 ];
+
+
+$(window).ready(function() {
+  console.log('ready');
+  $('.main_nav').fadeIn(100);
+});
