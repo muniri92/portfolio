@@ -3,23 +3,25 @@
   <!-- HEAD -->
   <head>
     <meta charset="utf-8">
-    <title>Munr's Portfolio</title>
+    <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/screen-size.css">
     <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-    <!-- HANDLEBAR SCRIPT -->
-
+    <!-- PROJECT TEMPLATE -->
     <script id="project_template" type="text/x-handlebars-template">
       <article id="project_{{id}}">
         <section class="project_container">
           <!-- PROJECT IMAGES -->
-          <div class="project_img">
-            <img src="{{image}}">
-          </div>
+          <article class="images">
+            <div class="project_img">
+              <img src="{{image}}">
+            </div>
+          </article>
           <!-- PROJECTS -->
           <section class="project_info">
             <header>
@@ -36,16 +38,38 @@
       </article>
       <hr>
     </script>
-
+    <script id="edu_template" type="text/x-handlebars-template">
+      <section id="edu_{{id}}">
+        <div class="edu_container">
+          <section class="edu_body_container">
+            <article class="body_container">
+              <h6 class="edu_class"><strong>{{{degree}}}</strong></h6>
+              <h6 class="edu_location icon-file-text2">{{{location}}}</h6>
+              <div class="edu_body">{{{body}}}</div>
+            </article>
+            <!-- <hr> -->
+          </section>
+          <article class="date_container">
+            <div class="edu_date"><em>{{date}}</em></div>
+          </article>
+        </div>
+      </section>
+      <hr>
+    </script>
   </head>
+  <!-- MADE A BORDER TO SEPERATE HEAD & BODY -->
+  <!-- ========================================================================= -->
   <body>
-
     <!-- TITLE -->
+    <header class="top_header">
+      <div class="">
+        MUNIR IBRAHIM
+      </div>
+    </header>
     <header class="site_header">
       <h1 id="name">
         Munir Ibrahim
       </h1>
-
       <!-- NAVIGATION -->
       <nav class="main_nav">
         <div class="icon-menu"></div>
@@ -56,97 +80,39 @@
           <li id="navLink"><a href="https://linkedin.com" class="icon-linkedin"> LINKEDIN</a></li>
           <li id="navGit"><a href="https://github.com/muniri92" class="icon-github"> GITHUB</a></li>
         </ul>
-
       </nav>
     </header>
 
     <!-- MAIN BODY -->
     <main id="main">
-      <!-- PROJECT TEMPLATE -->
+      <!-- APPEND PROJECT SECTION -->
       <section id="projects" class="tab_content"></section>
-
-      <!-- ABOUT ME -->
+      <!-- RESUME -->
       <section id="about" class="tab_content">
-        <!-- <div id="welcome">
-          <header id="porfolio">
-            <h5>Welcome to my Portfolio</h5>
-          </header>
-          <article id="porfolio_about">
-            <h5>Some of my interests:</h5>
-            <ul>
-              <li>Combining Software Development and Mathematics</li>
-              <li>Creating amazing websites that are both stylish, responsive and user friendly.</li>
-              <li>Hanging with my family and my squad!</li>
-            </ul>
-          </article>
-        </div> -->
         <article class="vitae">
           <header>
             <h4 class="resume_header">CURRICULUM VITAE</h4>
           </header>
-          <section>
-            <article class="education">
-              <h4>EDUCATION</h4>
-              <div>
-                <p>UNIVERSITY OF WASHINGTON - SEATTLE</p>
-                <h5>BACHELOR OF ARTS IN MATHEMATICS</h5>
-                <h6>
-                  APPLIED MATHEMATICS MINOR<br>
-                  DIVERSITY MINOR
-                </h6>
-              </div>
-              <hr>
-              <section class="code_fellows">
-                <h5 class="resume_header">CODE FELLOWS</h5>
-                <div id="code_201">
-                  <h6>CODE FELLOWS 201:</h6>
-                  <p>Foundations of Software Development</p>
-                </div>
-
-                <div id="code_301">
-                  <h6>CODE FELLOWS 301:</h6>
-                  <p>Intermediate Software Development</p>
-                </div>
-
-                <div id="code_401">
-                  <h6>CODE FELLOWS 401:</h6>
-                  <p>Advanced Software Development in Python</p>
-                </div>
-              </section>
-
-            </article>
-            <hr>
-            <article class="work">
-              <h4 class="resume_header">WORK</h4>
-              <div class="">
-                <h5></h5>
-              </div>
-            </article>
-
-          </section>
+          <div class="space"></div>
+          <!-- APPEND EDUCATION SECTION -->
+          <div class="edu_div">
+            <h4 class=resume_title>EDUCATION</h4>
+            <section id="edu"></section>
+          </div>
         </article>
-        <hr>
-        <div id="welcome">
-          <header id="porfolio">
-            <h5>Welcome to my Portfolio</h5>
-          </header>
-          <article id="porfolio_about">
-            <h5>Some of my interests:</h5>
-            <ul>
-              <li>Combining Software Development and Mathematics</li>
-              <li>Creating amazing websites that are both stylish, responsive and user friendly.</li>
-              <li>Hanging with my family and my squad!</li>
-            </ul>
-          </article>
-        </div>
       </section>
     </main>
+
     <!-- FOOTER -->
     <footer>
       &copy; 2016 Porfolio | Email: mibrah04@gmail.com
     </footer>
+
+    <!-- jQUERY SCRIPT -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- HANDLEBAR SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!-- JS SCRIPTS -->
     <script type="text/javascript" src="js/projects.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/projectView.js">
