@@ -12,10 +12,10 @@ projectView.handleMainNav();
 
 
 // projectView.setTeasers = function() {
-//   $('.project-body *:nth-of-type(n+2)').hide();
-//   $('.read-on').on('click', function(e) {
+//   $('.project_body *:nth-of-type(n+2)').hide();
+//   $('.read_on').on('click', function(e) {
 //     e.preventDefault();
-//     $(this).siblings('section').children().show();
+//     $(this).siblings('div').children().show();
 //     $(this).hide();
 //   });
 // };
