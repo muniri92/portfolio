@@ -1,5 +1,3 @@
-var project = [];
-var education = [];
 
 function Project (opts) {
   this.id = opts.id;
@@ -11,6 +9,9 @@ function Project (opts) {
   this.startDate = opts.startDate;
 };
 
+Project.all = [];
+Education.all = [];
+
 Project.prototype.toHtml = function() {
   var template = Handlebars.compile($('#project_template').text());
   this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
@@ -18,18 +19,43 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
+Project.loadAll = function(rawProject) {
+  rawProject.sort(function(a,b) {
+    return (new Date(b.startDate)) - (new Date(a.startDate));
+  });
 
-rawProject.sort(function(a,b) {
-  return (new Date(b.startDate)) - (new Date(a.startDate));
-});
+  rawProject.forEach(function(e) {
+    Project.all.push(new Project(e));
+  });
+};
 
-rawProject.forEach(function(e) {
-  project.push(new Project(e));
-});
+Project.fetchAll = function() {
+  if (localStorage.rawProject) {
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/project.json',
+      success: function(data, message, xhr) {
+        Project.loadAll(JSON.parse(localStorage.rawProject));
+      }
+    });
+    Project.loadAll(JSON.parse(localStorage.rawProject));
+    projectView.initIndexPage();
+  } else {
 
-project.forEach(function(a) {
-  $('#project').append(a.toHtml());
-});
+    $.getJSON('data/project.json', function(data) {
+      localStorage.setItem('rawProject', JSON.stringify(data));
+    });
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/project.json',
+      success: function(data, message, xhr) {
+        Project.loadAll(JSON.parse(localStorage.rawProject));
+      }
+    });
+    Project.loadAll(JSON.parse(localStorage.rawProject));
+    projectView.initIndexPage();
+  }
+};
 
 //////////////////////////////////////////////
 
@@ -46,12 +72,37 @@ Education.prototype.toHtml = function() {
   return template(this);
 };
 
-rawEducation.forEach(function(e) {
-  education.push(new Education(e));
-});
+Education.loadAll = function(rawEducation) {
+  rawEducation.forEach(function(e) {
+    Education.all.push(new Education(e));
+  });
+};
 
-education.forEach(function(a) {
-  $('#edu').append(a.toHtml());
-});
+Education.fetchAll = function() {
+  if (localStorage.rawEducation) {
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/edu.json',
+      success: function(data, message, xhr) {
+        Education.loadAll(JSON.parse(localStorage.rawEducation));
+      }
+    });
+    Education.loadAll(JSON.parse(localStorage.rawEducation));
+    educationView.initIndexPage();
+  } else {
+    $.getJSON('data/edu.json', function(data) {
+      localStorage.setItem('rawEducation', JSON.stringify(data));
+    });
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/edu.json',
+      success: function(data, message, xhr) {
+        Education.loadAll(JSON.parse(localStorage.rawEducation));
+      }
+    });
+    Education.loadAll(JSON.parse(localStorage.rawEducation));
+    educationView.initIndexPage();
+  }
+};
 
 //////////////////////////////////////////////

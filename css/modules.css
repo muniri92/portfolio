@@ -117,8 +117,6 @@
 .main_nav li {
   display: flex;
   padding:
-  outline: 1px dotted red;
-
 }
 
 .main_nav:hover ul {
@@ -126,8 +124,6 @@
   float: right;
   flex-direction: row;
   justify-content: center;
-  outline: 1px dotted red;
-
 }
 
 /*===========================================*/
