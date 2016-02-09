@@ -36,6 +36,13 @@ Project.fetchAll = function() {
       url: 'data/project.json',
       success: function(data, message, xhr) {
         Project.loadAll(JSON.parse(localStorage.rawProject));
+        var eTag = xhr.getResponseHeader('eTag');
+        if (localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+        } else {
+          Project.loadAll(JSON.parse(localStorage.rawProject));
+          projectView.initIndexPage();
+        }
       }
     });
     Project.loadAll(JSON.parse(localStorage.rawProject));
@@ -50,6 +57,14 @@ Project.fetchAll = function() {
       url: 'data/project.json',
       success: function(data, message, xhr) {
         Project.loadAll(JSON.parse(localStorage.rawProject));
+        var eTag = xhr.getResponseHeader('eTag');
+        if (localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+          Project.getAll();
+        } else {
+          Project.loadAll(JSON.parse(localStorage.rawProject));
+          projectView.initIndexPage();
+        }
       }
     });
     Project.loadAll(JSON.parse(localStorage.rawProject));
@@ -85,6 +100,13 @@ Education.fetchAll = function() {
       url: 'data/edu.json',
       success: function(data, message, xhr) {
         Education.loadAll(JSON.parse(localStorage.rawEducation));
+        var eTag = xhr.getResponseHeader('eTag');
+        if (localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+        } else {
+          Education.loadAll(JSON.parse(localStorage.rawEducation));
+          educationView.initIndexPage();
+        }
       }
     });
     Education.loadAll(JSON.parse(localStorage.rawEducation));

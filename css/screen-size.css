@@ -13,15 +13,18 @@
 
   .main_nav {
     display: flex;
-    margin-top: 10px;
+    margin: 10px 0px 0px -10px;
     justify-content: space-around;
     /*clear: both;*/
+    /*background-color: rgb(199, 158, 13);*/
   }
 
   #nav {
+    margin-bottom: -1px;
     display: inline-flex;
     clear: both;
-    margin: 0px;
+    background-color: white;
+;
   }
 
   .main_nav:hover ul {

@@ -91,7 +91,6 @@
   font-size: 50px;
   margin-top: 15px;
   margin-bottom: -10px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 /*===========================================*/
@@ -116,7 +115,6 @@
 
 .main_nav li {
   display: flex;
-  padding:
 }
 
 .main_nav:hover ul {
