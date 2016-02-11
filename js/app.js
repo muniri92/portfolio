@@ -128,5 +128,16 @@
     }
   };
   module.Education = Education;
+
+
+
   //////////////////////////////////////////////
 }(window));
+
+// // show loading image
+// $('.loader').show();
+// $('.main_img').hide();
+// $('.main_img').on('load', function(){
+//   $('.loader').fadeOut('slow');
+//   $('.main_img').show();
+// });

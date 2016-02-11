@@ -14,7 +14,7 @@
   projectView.initIndexPage = function() {
     Project.all.forEach(function(a){
       $('#project').append(a.toHtml());
-    });
+    });``
     projectView.handleMainNav();
   };
 
@@ -29,7 +29,7 @@
     $('.project_body *:nth-of-type(n+2)').hide();
     $('.read_on').on('click', function(e) {
       e.preventDefault();
-      $(this).sibling('.project_body').children().show();
+      $(this).sibling('div').children().show();
       $(this).hide();
     });
   };
