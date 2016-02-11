@@ -1,33 +1,64 @@
 (function(module) {
+
+  function Generic (opts) {
+    for (var i in opts) {
+      this[i] = opts[i];
+    }
+  };
+
+  Generic.all = [];
+
+  /////////////////////////////////////////////////////////
   function Project (opts) {
-    this.id = opts.id;
-    this.title = opts.title;
-    this.image = 'img/' + opts.image;
-    this.gitRepo = opts.gitRepo;
-    this.url = opts.url;
-    this.body = opts.body;
-    this.startDate = opts.startDate;
+    for (var i in opts) {
+      this[i] = opts[i];
+    }
+  };
+
+  function Education (edu) {
+    for (var i in edu) {
+      this[i] = edu[i];
+    }
   };
 
   Project.all = [];
   Education.all = [];
+  /////////////////////////////////////////////////////////
 
   Project.prototype.toHtml = function() {
     var template = Handlebars.compile($('#project_template').text());
+
     this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
     this.publishStatus = this.startDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+
     return template(this);
   };
+
+  Education.prototype.toHtml = function() {
+    var template = Handlebars.compile($('#edu_template').text());
+    return template(this);
+  };
+
+  /////////////////////////////////////////////////////////
 
   Project.loadAll = function(rawProject) {
     rawProject.sort(function(a,b) {
       return (new Date(b.startDate)) - (new Date(a.startDate));
     });
-
     rawProject.forEach(function(e) {
       Project.all.push(new Project(e));
+      console.log(Project.all);
     });
   };
+
+
+  Education.loadAll = function(rawEducation) {
+    rawEducation.forEach(function(e) {
+      Education.all.push(new Education(e));
+    });
+  };
+
+  /////////////////////////////////////////////////////////
 
   Project.fetchAll = function() {
     if (localStorage.rawProject) {
@@ -60,7 +91,6 @@
           var eTag = xhr.getResponseHeader('eTag');
           if (localStorage.eTag || eTag !== localStorage.eTag) {
             localStorage.eTag = eTag;
-            Project.getAll();
           } else {
             Project.loadAll(JSON.parse(localStorage.rawProject));
             projectView.initIndexPage();
@@ -70,28 +100,6 @@
       Project.loadAll(JSON.parse(localStorage.rawProject));
       projectView.initIndexPage();
     }
-  };
-
-  module.Project = Project;
-  //////////////////////////////////////////////
-
-  function Education (edu) {
-    this.id = edu.id;
-    this.location = edu.location;
-    this.degree = edu.degree;
-    this.body = edu.body;
-    this.date = edu.date;
-  };
-
-  Education.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#edu_template').text());
-    return template(this);
-  };
-
-  Education.loadAll = function(rawEducation) {
-    rawEducation.forEach(function(e) {
-      Education.all.push(new Education(e));
-    });
   };
 
   Education.fetchAll = function() {
@@ -127,12 +135,16 @@
       educationView.initIndexPage();
     }
   };
+
+  /////////////////////////////////////////////////////////
+  module.Project = Project;
   module.Education = Education;
+  ////////////////////////////////////////////////////////
 
-
-
-  //////////////////////////////////////////////
 }(window));
+
+
+// SAVE THIS - TRYING TO GET THE LOAD TO WORK
 
 // // show loading image
 // $('.loader').show();
