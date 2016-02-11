@@ -6,6 +6,18 @@
   /*===========================================*/
   /* ==== HAMBURGER BAR ==== */
 
+  .loader {
+  	display: flex;
+    justify-content: center;
+  	z-index: 9999;
+  	/*background: url('gears.gif') 50% 50% no-repeat white;*/
+  }
+
+  .space {
+    background-color: #c79e0d;
+  }
+
+
   .icon-menu {
     display: none;
     clear: right;
