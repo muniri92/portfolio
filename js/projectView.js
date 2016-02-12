@@ -1,9 +1,11 @@
 (function(module) {
-  var projectView = {};
-  var educationView = {};
+  var genericView = {};
+  //
+  // var projectView = {};
+  // var educationView = {};
 
   // SWITCHING BETWEEN ABOUT AND PROJECT TAB
-  projectView.handleMainNav = function() {
+  genericView.handleMainNav = function() {
     $('.main_nav').on('click', 'li', function() {
       $('.tab_content').hide();
       $('#' + $(this).data('link') + '').show();
@@ -11,18 +13,25 @@
     $('.main_nav .tab:first').click();
   };
 
-  projectView.initIndexPage = function() {
-    Project.all.forEach(function(a){
-      $('#project').append(a.toHtml());
-    });
-    projectView.handleMainNav();
-  };
-
-  educationView.initIndexPage = function() {
-    Education.all.forEach(function(a){
+  genericView.initIndexPage = function() {
+    Generic.all.forEach(function(a){
       $('#edu').append(a.toHtml());
     });
+    genericView.handleMainNav();
   };
+
+  // projectView.initIndexPage = function() {
+  //   Project.all.forEach(function(a){
+  //     $('#project').append(a.toHtml());
+  //   });
+  //   projectView.handleMainNav();
+  // };
+  //
+  // educationView.initIndexPage = function() {
+  //   Education.all.forEach(function(a){
+  //     $('#edu').append(a.toHtml());
+  //   });
+  // };
 
   // // CREATING THE 'READ ON' FUNCTION
   // projectView.setTeasers = function() {
@@ -45,6 +54,9 @@
   // };
   // projectView.setTeasers();
 
-  module.projectView = projectView;
-  module.educationView = educationView;
+  module.genericView = genericView;
+
+
+  // module.projectView = projectView;
+  // module.educationView = educationView;
 })(window);
