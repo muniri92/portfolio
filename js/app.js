@@ -1,16 +1,11 @@
 (function(module) {
   function Project (opts) {
-    this.id = opts.id;
-    this.title = opts.title;
-    this.image = 'img/' + opts.image;
-    this.gitRepo = opts.gitRepo;
-    this.url = opts.url;
-    this.body = opts.body;
-    this.startDate = opts.startDate;
+    for (var i in opts) {
+      this[i] = opts[i];
+    }
   };
 
   Project.all = [];
-  Education.all = [];
 
   Project.prototype.toHtml = function() {
     var template = Handlebars.compile($('#project_template').text());
@@ -48,7 +43,6 @@
       Project.loadAll(JSON.parse(localStorage.rawProject));
       projectView.initIndexPage();
     } else {
-
       $.getJSON('data/project.json', function(data) {
         localStorage.setItem('rawProject', JSON.stringify(data));
       });
@@ -73,15 +67,16 @@
   };
 
   module.Project = Project;
+
   //////////////////////////////////////////////
 
   function Education (edu) {
-    this.id = edu.id;
-    this.location = edu.location;
-    this.degree = edu.degree;
-    this.body = edu.body;
-    this.date = edu.date;
+    for (var i in edu) {
+      this[i] = edu[i];
+    }
   };
+
+  Education.all = [];
 
   Education.prototype.toHtml = function() {
     var template = Handlebars.compile($('#edu_template').text());
