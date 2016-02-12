@@ -3,7 +3,7 @@
   function Generic (opts) {
     for (var i in opts) {
       this[i] = opts[i];
-      console.log(this[i]);
+      // console.log(this[i]);
     }
   };
 
@@ -28,9 +28,16 @@
   /////////////////////////////////////////////////////////
 
 
-  Generic.prototype.toHtml = function(template) {
-    var template = Handlebars.compile($('#edu_template').text());
-    return template(this);
+  Generic.prototype.toHtml = function() {
+    if (url = 'edu.json') {
+      var template = Handlebars.compile($('#edu_template').text());
+      return template(this);
+    } else {
+      var template = Handlebars.compile($('#project_template').text());
+      this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
+      this.publishStatus = this.startDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+      return template(this);
+    }
   };
 
 
@@ -53,7 +60,7 @@
   Generic.loadAll = function(rawGeneric) {
     rawGeneric.forEach(function(e) {
       Generic.all.push(new Generic(e));
-      console.log(e);
+      // console.log(e);
     });
   };
 
@@ -77,48 +84,69 @@
 
   /////////////////////////////////////////////////////////
 
-  var url;
-  $('#gen_proj').on('click', function() {
-    url = 'project.json';
-  });
-  $('#gen_resume').on('click', function() {
-    url = 'edu.json';
-  });
-  Generic.fetchAll = function(url) {
+  function urlGeneric() {
+    // TEST 1.2
+    var url;
+    var urlTest = true;
+    if (urlTest) {
+      url = 'edu.json';
+      console.log(url);
+      urlTest = false;
+      return url;
+    } else {
+      url = 'project.json';
+      console.log(url);
+      return url;
+    };
+
+    // TEST 1.1
+    // var url;
+    // $('#gen_proj').on('click', function() {
+    //   url = 'project.json';
+    //   console.log('yo');
+    //   // return url;
+    // });
+    // $('#gen_resume').on('click', function() {
+    //   url = 'edu.json';
+    //   // return url;
+    // });
+  };
+  Generic.fetchAll = function() {
+    urlGeneric();
     if (localStorage.rawGeneric) {
       $.ajax({
         type: 'HEAD',
-        url: 'data/' + url,
+        url: 'data/edu.json' ,
         success: function(data, message, xhr) {
           Generic.loadAll(JSON.parse(localStorage.rawGeneric));
           var eTag = xhr.getResponseHeader('eTag');
-          if (localStorage.eTag || eTag !== localStorage.eTag) {
-            localStorage.eTag = eTag;
-          } else {
-            Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-            genericView.initIndexPage();
-          }
+          // if (localStorage.eTag || eTag !== localStorage.eTag) {
+          //   localStorage.eTag = eTag;
+          // } else {
+          // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
+          genericView.initIndexPage();
+          // }
         }
       });
       // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
       genericView.initIndexPage();
 
     } else {
-      $.getJSON('data/' + url, function(data) {
+      $.getJSON('data/edu.json' , function(data) {
         localStorage.setItem('rawGeneric', JSON.stringify(data));
       });
       $.ajax({
         type: 'HEAD',
-        url: 'data/' + url,
+        url: 'data/edu.json',
         success: function(data, message, xhr) {
           Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-          var eTag = xhr.getResponseHeader('eTag');
-          if (localStorage.eTag || eTag !== localStorage.eTag) {
-            localStorage.eTag = eTag;
-          } else {
-            Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-            genericView.initIndexPage();
-          }
+          // var eTag = xhr.getResponseHeader('eTag');
+          // if (localStorage.eTag || eTag !== localStorage.eTag) {
+          //   localStorage.eTag = eTag;
+          // } else {
+          // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
+          genericView.initIndexPage();
+          // }
         }
       });
       Generic.loadAll(JSON.parse(localStorage.rawGeneric));
@@ -148,7 +176,6 @@
   //     Project.loadAll(JSON.parse(localStorage.rawProject));
   //     projectView.initIndexPage();
   //   } else {
-  //
   //     $.getJSON('data/project.json', function(data) {
   //       localStorage.setItem('rawProject', JSON.stringify(data));
   //     });
