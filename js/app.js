@@ -18,12 +18,12 @@
     rawProject.sort(function(a,b) {
       return (new Date(b.startDate)) - (new Date(a.startDate));
     });
-
+ // Can also use map if wanted instead of forEach and push
     rawProject.forEach(function(e) {
       Project.all.push(new Project(e));
     });
   };
-
+  //** Could be refactored further, repeated lines **//
   Project.fetchAll = function() {
     if (localStorage.rawProject) {
       $.ajax({
@@ -34,6 +34,8 @@
           var eTag = xhr.getResponseHeader('eTag');
           if (localStorage.eTag || eTag !== localStorage.eTag) {
             localStorage.eTag = eTag;
+            // NEEDS TO PULL data again if eTag is different .getJSON and process
+          
           } else {
             Project.loadAll(JSON.parse(localStorage.rawProject));
             projectView.initIndexPage();
@@ -46,6 +48,7 @@
       $.getJSON('data/project.json', function(data) {
         localStorage.setItem('rawProject', JSON.stringify(data));
       });
+      //** Do you need this **//
       $.ajax({
         type: 'HEAD',
         url: 'data/project.json',
