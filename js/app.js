@@ -3,59 +3,23 @@
   function Generic (opts) {
     for (var i in opts) {
       this[i] = opts[i];
-      // console.log(this[i]);
     }
   };
 
   Generic.all = [];
 
-  /////////////////////////////////////////////////////////
-  // function Project (opts) {
-  //   for (var i in opts) {
-  //     this[i] = opts[i];
-  //   }
-  // };
-
-  // function Education (edu) {
-  //   for (var i in edu) {
-  //     this[i] = edu[i];
-  //   }
-  // };
-  //
-  // Project.all = [];
-  // Education.all = [];
-
-  /////////////////////////////////////////////////////////
-
-
   Generic.prototype.toHtml = function() {
-    if (url = 'edu.json') {
-      var template = Handlebars.compile($('#edu_template').text());
-      return template(this);
-    } else {
-      var template = Handlebars.compile($('#project_template').text());
-      this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
-      this.publishStatus = this.startDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-      return template(this);
-    }
+    var template = Handlebars.compile($('#edu_template').text());
+    return template(this);
+    var templates = Handlebars.compile($('#project_template').text());
+    return templates(this);
   };
 
-
-  // Project.prototype.toHtml = function() {
-  //   var template = Handlebars.compile($('#project_template').text());
-  //
+  // Generic.prototype.toHtml = function() {
   //   this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
   //   this.publishStatus = this.startDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-  //
   //   return template(this);
   // };
-  //
-  // Education.prototype.toHtml = function() {
-  //   var template = Handlebars.compile($('#edu_template').text());
-  //   return template(this);
-  // };
-
-  /////////////////////////////////////////////////////////
 
   Generic.loadAll = function(rawGeneric) {
     rawGeneric.forEach(function(e) {
@@ -74,49 +38,23 @@
   //     console.log(Project.all);
   //   });
   // };
-  //
-  //
-  // Education.loadAll = function(rawEducation) {
-  //   rawEducation.forEach(function(e) {
-  //     Education.all.push(new Education(e));
-  //   });
-  // };
 
-  /////////////////////////////////////////////////////////
-
-  function urlGeneric() {
-    // TEST 1.2
-    var url;
-    var urlTest = true;
-    if (urlTest) {
-      url = 'edu.json';
-      console.log(url);
-      urlTest = false;
-      return url;
-    } else {
-      url = 'project.json';
-      console.log(url);
-      return url;
-    };
-
-    // TEST 1.1
-    // var url;
-    // $('#gen_proj').on('click', function() {
-    //   url = 'project.json';
-    //   console.log('yo');
-    //   // return url;
-    // });
-    // $('#gen_resume').on('click', function() {
-    //   url = 'edu.json';
-    //   // return url;
-    // });
+  genInitHelper = function(url) {
+    console.log(url);
+    if (url = 'edu.json') {
+      genericView.initIndexPage('#edu');
+    } else if (url = 'project.json') {
+      genericView.initIndexPage('#project');
+    }
+    console.log(url);
   };
-  Generic.fetchAll = function() {
-    urlGeneric();
+
+  Generic.fetchAll = function(url) {
+    // console.log(url);
     if (localStorage.rawGeneric) {
       $.ajax({
         type: 'HEAD',
-        url: 'data/edu.json' ,
+        url: 'data/' + url ,
         success: function(data, message, xhr) {
           Generic.loadAll(JSON.parse(localStorage.rawGeneric));
           var eTag = xhr.getResponseHeader('eTag');
@@ -124,33 +62,34 @@
           //   localStorage.eTag = eTag;
           // } else {
           // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-          genericView.initIndexPage();
-          // }
-        }
-      });
-      // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-      genericView.initIndexPage();
-
-    } else {
-      $.getJSON('data/edu.json' , function(data) {
-        localStorage.setItem('rawGeneric', JSON.stringify(data));
-      });
-      $.ajax({
-        type: 'HEAD',
-        url: 'data/edu.json',
-        success: function(data, message, xhr) {
-          Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-          // var eTag = xhr.getResponseHeader('eTag');
-          // if (localStorage.eTag || eTag !== localStorage.eTag) {
-          //   localStorage.eTag = eTag;
-          // } else {
-          // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-          genericView.initIndexPage();
+          console.log(localStorage.rawGeneric);
           // }
         }
       });
       Generic.loadAll(JSON.parse(localStorage.rawGeneric));
-      genericView.initIndexPage();
+      genInitHelper(url);
+      console.log();
+    } else {
+      $.getJSON('data/' + url , function(data) {
+        localStorage.setItem('rawGeneric', JSON.stringify(data));
+      });
+
+      // $.ajax({
+      //   type: 'HEAD',
+      //   url: 'data/' + url,
+      //   success: function(data, message, xhr) {
+      //     Generic.loadAll(JSON.parse(localStorage.rawGeneric));
+      //     // var eTag = xhr.getResponseHeader('eTag');
+      //     // if (localStorage.eTag || eTag !== localStorage.eTag) {
+      //     //   localStorage.eTag = eTag;
+      //     // } else {
+      //     // Generic.loadAll(JSON.parse(localStorage.rawGeneric));
+      //     genericView.initIndexPage('edu');
+      //     // }
+      //   }
+      // });
+      Generic.loadAll(JSON.parse(localStorage.rawGeneric));
+      genInitHelper(url);
       // console.log(rawGeneric);
     }
   };
@@ -235,19 +174,6 @@
   /////////////////////////////////////////////////////////
   module.Generic = Generic;
 
-  // module.Project = Project;
-  // module.Education = Education;
   ////////////////////////////////////////////////////////
 
 }(window));
-
-
-// SAVE THIS - TRYING TO GET THE LOAD TO WORK
-
-// // show loading image
-// $('.loader').show();
-// $('.main_img').hide();
-// $('.main_img').on('load', function(){
-//   $('.loader').fadeOut('slow');
-//   $('.main_img').show();
-// });

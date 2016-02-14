@@ -9,14 +9,17 @@
     $('.main_nav').on('click', 'li', function() {
       $('.tab_content').hide();
       $('#' + $(this).data('link') + '').show();
+      console.log($(this).data('link'));
     });
     $('.main_nav .tab:first').click();
   };
 
-  genericView.initIndexPage = function() {
+  genericView.initIndexPage = function(url) {
+    console.log(url);
     Generic.all.forEach(function(a){
-      $('#edu').append(a.toHtml());
+      $(url).append(a.toHtml());
     });
+
     genericView.handleMainNav();
   };
 
