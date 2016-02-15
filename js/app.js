@@ -1,4 +1,5 @@
 (function(module) {
+
   function Project (opts) {
     for (var i in opts) {
       this[i] = opts[i];
@@ -123,16 +124,52 @@
     }
   };
   module.Education = Education;
-
-
-
   //////////////////////////////////////////////
 }(window));
 
-// // show loading image
-// $('.loader').show();
-// $('.main_img').hide();
-// $('.main_img').on('load', function(){
-//   $('.loader').fadeOut('slow');
-//   $('.main_img').show();
-// });
+// ATTEMPTING TO DRY
+// // CONSTURCTOR
+// function Generic(opts) {
+//   for (var i in opts) {
+//     this[i] = opts[i];
+//   }
+// };
+//
+// Generic.all = [];
+//
+// // TO HTML
+// Generic.prototype.toHtml = function() {
+//   var template = Handlebars.compile($('').text());
+//   return template(this);
+// };
+//
+// // LOAD DATA INTO ARRAY
+// Generic.loadAll = function(rawData) {
+//   // rawData.sort(function(a, b) {
+//   //   return (new Date(b.startDate)) - (new Date(a.startDate));
+//   // });
+//
+//   // USED MAP
+//   Generic.all = rawData.map(function(e) {
+//     return new Generic(e);
+//   });
+// };
+//
+// // FETCH DATA FROM LOCALSTORAGE
+// Generic.fetchAll = function(rawData, dataUrl) {
+//   if (localStorage.rawData) {
+//     $.ajax({
+//       type: 'HEAD',
+//       url: 'data/' + dataUrl,
+//       success: function(data, message, xhr) {
+//         Generic.loadAll(JSON.parse(localStorage.rawData));
+//       }
+//   } else {
+//     $.getJSON('data/' + dataUrl, function(data) {
+//       localStorage.setItem('rawData', JSON.stringify(data));
+//     });
+//     Generic.loadAll(JSON.parse(localStorage.rawData));
+//     // genericView.initIndexPage();
+//   }
+// };
+//
