@@ -7,6 +7,7 @@
 
   projectController.index = function() {
     $('main > section').hide();
+    repos.requestRepos(repoView.index);
     $('#projects').fadeIn('slow');
   };
 
