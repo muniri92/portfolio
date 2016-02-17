@@ -1,138 +1,64 @@
 (function(module) {
-  function Project (opts) {
+
+  // DYNAMIC CONSTURCTOR
+  function Generic(opts) {
     for (var i in opts) {
       this[i] = opts[i];
     }
   };
 
-  Project.all = [];
-
-  Project.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#project_template').text());
-    this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
-    this.publishStatus = this.startDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-    return template(this);
-  };
-
-  Project.loadAll = function(rawProject) {
-    rawProject.sort(function(a,b) {
-      return (new Date(b.startDate)) - (new Date(a.startDate));
-    });
-
-    rawProject.forEach(function(e) {
-      Project.all.push(new Project(e));
-    });
-  };
-
-  Project.fetchAll = function() {
-    if (localStorage.rawProject) {
-      $.ajax({
-        type: 'HEAD',
-        url: 'data/project.json',
-        success: function(data, message, xhr) {
-          Project.loadAll(JSON.parse(localStorage.rawProject));
-          var eTag = xhr.getResponseHeader('eTag');
-          if (localStorage.eTag || eTag !== localStorage.eTag) {
-            localStorage.eTag = eTag;
-          } else {
-            Project.loadAll(JSON.parse(localStorage.rawProject));
-            projectView.initIndexPage();
-          }
-        }
-      });
-      Project.loadAll(JSON.parse(localStorage.rawProject));
-      projectView.initIndexPage();
+  // HANDLEBAR TEMPLATES
+  Generic.prototype.toHtml = function(temp) {
+    if (temp == '#edu_template') {
+      var template = Handlebars.compile($(temp).text());
+      return template(this);
     } else {
-      $.getJSON('data/project.json', function(data) {
-        localStorage.setItem('rawProject', JSON.stringify(data));
-      });
-      $.ajax({
-        type: 'HEAD',
-        url: 'data/project.json',
-        success: function(data, message, xhr) {
-          Project.loadAll(JSON.parse(localStorage.rawProject));
-          var eTag = xhr.getResponseHeader('eTag');
-          if (localStorage.eTag || eTag !== localStorage.eTag) {
-            localStorage.eTag = eTag;
-            Project.getAll();
-          } else {
-            Project.loadAll(JSON.parse(localStorage.rawProject));
-            projectView.initIndexPage();
-          }
-        }
-      });
-      Project.loadAll(JSON.parse(localStorage.rawProject));
-      projectView.initIndexPage();
+      var template = Handlebars.compile($(temp).text());
+      this.daysAgo = parseInt((new Date() - new Date(this.startDate))/60/60/24/1000);
+      this.publishStatus = this.startDate ? 'Launched ' + this.daysAgo + ' days ago' : '(draft)';
+      return template(this);
     }
   };
 
-  module.Project = Project;
-
-  //////////////////////////////////////////////
-
-  function Education (edu) {
-    for (var i in edu) {
-      this[i] = edu[i];
+  // LOAD DATA INTO ARRAY
+  Generic.all = [];
+  Generic.loadAll = function(rawData) {
+    if (rawData.length == 2) { // CHANGE THE NUMBER DEPENDING ON THE NUMBER OF PROJECTS IN JSON
+      rawData.sort(function(a,b) {
+        return (new Date(b.startDate)) - (new Date(a.startDate));
+      });
     }
-  };
-
-  Education.all = [];
-
-  Education.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#edu_template').text());
-    return template(this);
-  };
-
-  Education.loadAll = function(rawEducation) {
-    rawEducation.forEach(function(e) {
-      Education.all.push(new Education(e));
+    // USED MAP TO CREATE NEW ARRAY
+    Generic.all = rawData.map(function(e) {
+      return new Generic(e);
     });
   };
 
-  Education.fetchAll = function() {
-    if (localStorage.rawEducation) {
+  // FETCH DATA USING AJAX
+  Generic.fetchAll = function(rawData, dataUrl) {
+    if (rawData) {
       $.ajax({
         type: 'HEAD',
-        url: 'data/edu.json',
+        url: 'data/' + dataUrl,
         success: function(data, message, xhr) {
-          Education.loadAll(JSON.parse(localStorage.rawEducation));
+          Generic.loadAll(JSON.parse(rawData));
           var eTag = xhr.getResponseHeader('eTag');
           if (localStorage.eTag || eTag !== localStorage.eTag) {
             localStorage.eTag = eTag;
           } else {
-            Education.loadAll(JSON.parse(localStorage.rawEducation));
-            educationView.initIndexPage();
+            Generic.loadAll(JSON.parse(rawData));
           }
         }
       });
-      Education.loadAll(JSON.parse(localStorage.rawEducation));
-      educationView.initIndexPage();
+      Generic.loadAll(JSON.parse(rawData));
     } else {
-      $.getJSON('data/edu.json', function(data) {
-        localStorage.setItem('rawEducation', JSON.stringify(data));
+      // COULDN'T FIND DATA IN LOCALSTORAGE, SO I SET IT UP
+      $.getJSON('data/' + dataUrl, function(data) {
+        localStorage.setItem('rawData', JSON.stringify(data));
       });
-      $.ajax({
-        type: 'HEAD',
-        url: 'data/edu.json',
-        success: function(data, message, xhr) {
-          Education.loadAll(JSON.parse(localStorage.rawEducation));
-        }
-      });
-      Education.loadAll(JSON.parse(localStorage.rawEducation));
-      educationView.initIndexPage();
+      Generic.loadAll(JSON.parse(rawData));
     }
   };
-  module.Education = Education;
 
-
-
-  //////////////////////////////////////////////
+  module.Generic = Generic;
 }(window));
-
-// // show loading image
-// $('.loader').show();
-// $('.main_img').hide();
-// $('.main_img').on('load', function(){
-//   $('.loader').fadeOut('slow');
-//   $('.main_img').show();
-// });
