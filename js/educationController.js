@@ -1,11 +1,13 @@
 (function(module) {
   var educationController = {};
 
-  educationController.index = function() {
-    Education.fetchAll();
+  // FETCHS ALL THE 'edu.json' DATA
+  Generic.fetchAll(localStorage.rawEducation, 'edu.json');
+  genericView.initIndexPage('#edu');
 
+  educationController.index = function() {
     $('main > section').hide();
-    $('#resume').show();
+    $('#resume').fadeIn('slow');
   };
 
   module.educationController = educationController;
