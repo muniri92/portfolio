@@ -161,6 +161,18 @@
 .contact_container:last-child {
   margin-bottom: 20px;
 }
+
+.repos_contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.repos_contact li {
+  display: flex;
+  justify-content: center;
+  list-style: square;
+}
 /*===========================================*/
 
 /* ======== SPACEBAR AND CLEARFIX ======== */

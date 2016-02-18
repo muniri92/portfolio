@@ -2,9 +2,8 @@
   var repoView = {};
 
   var ui = function() {
-    var $about = $('#contact'); // Best practice: Cache the DOM query if it's used more than once.
+    var $about = $('#contacts'); // Best practice: Cache the DOM query if it's used more than once.
     $about.find('ul').empty();
-  //   $about.show().siblings().hide();
   };
 
   var render = function(repo) {
@@ -13,7 +12,7 @@
 
   repoView.index = function() {
     ui();
-    $('#projects ul').append(
+    $('#contacts ul').append(
       repos.with('git_url').map(render)
     );
   };

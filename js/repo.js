@@ -4,7 +4,7 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.get ('https://api.github.com/users/muniri92/repos?per_page=5&sort=updated', function(data, message, xhr) {
+    $.get('https://api.github.com/users/muniri92/repos?per_page=5&sort=updated', function(data, message, xhr) {
       repos.all = data;
     }).done(callback);
   };

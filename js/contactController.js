@@ -8,6 +8,7 @@
   contactController.index = function() {
     $('main > section').hide();
     $('#contacts').fadeIn('slow');
+    repos.requestRepos(repoView.index);
   };
 
   module.contactController = contactController;
