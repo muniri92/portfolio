@@ -1,6 +1,4 @@
 (function(module) {
-
-  // DYNAMIC CONSTURCTOR
   function Generic(opts) {
     for (var i in opts) {
       this[i] = opts[i];
@@ -28,14 +26,13 @@
         return (new Date(b.startDate)) - (new Date(a.startDate));
       });
     }
-    // USED MAP TO CREATE NEW ARRAY
     Generic.all = rawData.map(function(e) {
       return new Generic(e);
     });
   };
 
   // FETCH DATA USING AJAX
-  Generic.fetchAll = function(rawData, dataUrl) {
+  Generic.fetchAll = function(rawData, raw, dataUrl) {
     if (rawData) {
       $.ajax({
         type: 'HEAD',
@@ -51,14 +48,13 @@
         }
       });
       Generic.loadAll(JSON.parse(rawData));
-    } else {
+    } else if (!rawData) {
       // COULDN'T FIND DATA IN LOCALSTORAGE, SO I SET IT UP
       $.getJSON('data/' + dataUrl, function(data) {
-        localStorage.setItem('rawData', JSON.stringify(data));
+        localStorage.setItem(raw, JSON.stringify(data));
+        Generic.loadAll(JSON.parse(data));
       });
-      Generic.loadAll(JSON.parse(rawData));
     }
   };
-
   module.Generic = Generic;
 }(window));

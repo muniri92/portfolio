@@ -6,11 +6,24 @@
   /*===========================================*/
   /* ==== HAMBURGER BAR ==== */
 
+  .lower_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
   .loader {
   	display: flex;
-    justify-content: center;
-  	z-index: 9999;
+    padding: 0px 0px 0px 5px;
+  	/*z-index: 9999;*/
   	/*background: url('gears.gif') 50% 50% no-repeat white;*/
+  }
+
+  #name {
+    display: flex;
+    padding: 0px 5px 0px 0px;
+
   }
 
   .space {
@@ -57,10 +70,10 @@
   }
 
   .project_img {
-    height: 135px;
+    height: 155px;
     width: 250px;
     margin-top: 50px;
-  /*padding: 5px;*/
+    /*padding: 5px;*/
   }
 
   img {
@@ -89,7 +102,9 @@
   /*===========================================*/
   /* ==== FADE IN ==== */
 
-
+  hr {
+    margin-bottom: 20px;
+  }
 
   /*===========================================*/
 
@@ -101,9 +116,11 @@
   #edu_1, #edu_2, #edu_3 {
     display: flex;
     flex-direction: row;
+    margin: 0px 0px 0px -25px;
   }
 
-  .body_container {
+  .date_container em{
+    margin-left: 5px;
   }
 
   .edu_container {
@@ -130,12 +147,12 @@
   .edu_date {
     display: flex;
     width: 200px;
-    /*margin: 10px;*/
+    font-size: 13px;
   }
 
   .edu_class {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 7px;
   }
 
@@ -147,6 +164,41 @@
     font-size: 14px;
   }
 
+  .edu_body_list {
+    font-family: serif;
+    font-size: 14;
+    margin: 0px 0px -15px 5px;
+  }
+
+  .edu_body_list ul {
+    margin-left: 20px;
+  }
+
+  /* ==== FOOTER ==== */
+
+  footer {
+    position: relative;
+    color: white;
+    background-color: #444;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: -5px 0px 0px 0px;
+  }
+}
 
 
+@media only screen and (min-width: 890px) {
+  /* ==== CONTACT PAGE ==== */
+  .contact_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 0px 75px 0px;
+  }
+
+  .contact_img {
+    display: flex;
+  }
 }
