@@ -3,21 +3,24 @@
     "id":1,
     "degree":"BACHELOR OF ARTS IN MATHEMATICS<br>- APPLIED MATHEMATICS MINOR<br>- DIVERSITY MINOR",
     "location":"<em>UNIVERSITY OF WASHINGTON - SEATTLE</em>",
-    "body":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "body":"<p>Received a bachelors in Mathematics from the University of Washington. As well as a double minor in Applied Mathematics and Diversity.</p>",
+    "bodyList": "<p><strong>Certification:</strong> Quantitative Fundamentals in Computational Finance</p>",
     "date":"Sept 2010 - Dec 2015"
   },
   {
     "id":2,
     "degree":"Code 201: Foundations of Software Development",
     "location":"<em>CODE FELLOWS</em>",
-    "body":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "body":"<p>Intensive bootcamp that helped me build a strong software development foundation. Learned to develop clean, modular, lightweight code utilizing vanilla JavaScript, CSS, HTML, while using industry standard tools & workflows to write proficient code and work efficiently and harmoniously in professional environments.</p>",
+    "bodyList": "<h6><strong>Skills/Concepts:</strong></h6><ul><li>Introduction to HTML / CSS / JavaScript</li><li>Object-Oriented Programming</li><li>Introductory Data Structures & Algorithms </li><li>Document Object Model Manipulation (DOM) & Traversal</li><li>GitHub</li></ul>",
     "date":"Jan-Feb 2016"
   },
   {
     "id":3,
     "degree":"Code 301: Intermediate Software Development",
     "location":"<em>CODE FELLOWS</em>",
-    "body":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "body":"<p>Studied the core of software development, including MVC and asynchronous programming, to create web applications in HTML, CSS, and JavaScript, as well as implementing professional-grade frameworks and libraries. Immersed in a full agile development environment, I’m confident that the 50+ hours of coding a week gave me the skills necessary to code and develop in the most demanding of professional environments.</p>",
+    "bodyList": "<h6><strong>Skills/Concepts:</strong></h6><ul><li>Front-End Architecture</li><li>Functional Programming</li><li>Responsive Design</li><li>SQL</li><li>AJAX</li><li>APIs</li><li>Git and GitHub</li></ul>",
     "date":"Feb-March 2016"
   }
 ]

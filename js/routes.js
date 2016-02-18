@@ -1,4 +1,6 @@
-page('/', educationController.index);
-page('/project', projectController.index);
+page('/', homeController.index);
+page('/resume', educationController.index);
+page('/portfolio', projectController.index);
+page('/contact', contactController.index);
 
 page();

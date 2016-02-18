@@ -1,4 +1,9 @@
 /*===========================================*/
+
+.loader {
+  display: none;
+}
+
 /* ======== PROJECT TEMPLATE ======== */
 
 .project_container {
@@ -41,12 +46,13 @@
 /* ======== EDUCATION TEMPLATE ======== */
 
 .resume_title {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .edu_class {
   text-transform: uppercase;
-  font-size: 12px;
+  font-family: serif;
+  font-size: 13px;
   margin-bottom: 7px;
 }
 
@@ -58,8 +64,19 @@
   font-size: 14px;
 }
 
+.edu_body_list {
+  font-family: serif;
+  font-size: 14px;
+}
 
+.edu_body_list li{
+  list-style: square;
+  margin-left: 20px;
+}
 
+.date_container em {
+  font-size: 13px;
+}
 
 /*===========================================*/
 
@@ -72,8 +89,8 @@
   right: 0;
   top: 0;
   left: 0;
-  text-align: left;
-  padding: 0px 0px 0px 20px;
+  text-align: right;
+  padding: 0px 20px 0px 0px;
 }
 
 #name {
@@ -117,6 +134,8 @@
 
 /* ============ MAIN BODY ============*/
 
+/* ==== HOME ==== */
+
 /* ======== RESUME ========*/
 
 .resume_header {
@@ -124,15 +143,36 @@
   justify-content: center;
 }
 
-/* ==== EDUCATION ==== */
+/* ==== PORTFOLIO ==== */
 
+/* ==== CONTACT PAGE ==== */
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  /*margin: 50px 0px 75px 0px;*/
+}
 
-/* ==== COLLEGE ==== */
+.contact_img {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 10px 0px;
+}
 
+.contact_container:last-child {
+  margin-bottom: 20px;
+}
 
-/* ==== CODE FELLOWS ==== */
+.repos_contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-
+.repos_contact li {
+  display: flex;
+  justify-content: center;
+  list-style: square;
+}
 /*===========================================*/
 
 /* ======== SPACEBAR AND CLEARFIX ======== */
