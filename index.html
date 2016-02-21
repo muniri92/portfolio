@@ -128,12 +128,12 @@
     <!-- <script type="text/javascript" src="js/projects.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/projectView.js"></script>
+    <!-- RUN FECTH ALL METHODS -->
     <script>
-      Generic.fetchAll('edu.json');
+      Generic.fetchAll(localStorage.rawEducation, 'rawEducation', 'edu.json');
     </script>
     <script type="text/javascript">
-      Generic.fetchAll('project.json');
-
+      Generic.fetchAll(localStorage.rawProject, 'rawProject', 'project.json');
     </script>
   </body>
 </html>
