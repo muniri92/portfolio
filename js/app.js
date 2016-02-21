@@ -10,6 +10,7 @@
   // Handlebars template
   /////////////////////////////////////////////////////////
   Generic.prototype.toHtml = function(temp) {
+    console.log(temp);
     if (temp == '#edu_template') {
       var template = Handlebars.compile($(temp).text());
       return template(this);
@@ -49,18 +50,18 @@
           } else {
             Generic.loadAll(JSON.parse(rawData));
             if (raw === 'rawEducation') {
-              genericView.initIndexPage('#edu');
+              genericView.initIndexPage('#edu', '#edu_template');
             } else {
-              genericView.initIndexPage('#project');
+              genericView.initIndexPage('#project', '#project_template');
             }
           }
         }
       });
       Generic.loadAll(JSON.parse(rawData));
       if (raw === 'rawEducation') {
-        genericView.initIndexPage('#edu');
+        genericView.initIndexPage('#edu', '#edu_template');
       } else {
-        genericView.initIndexPage('#project');
+        genericView.initIndexPage('#project', '#project_template');
       }
     } else if (!rawData) {
       // COULDN'T FIND DATA IN LOCALSTORAGE, SO I SET IT UP
@@ -68,9 +69,9 @@
         localStorage.setItem(raw, JSON.stringify(data));
         Generic.loadAll(JSON.parse(data));
         if (raw === 'rawEducation') {
-          genericView.initIndexPage('#edu');
+          genericView.initIndexPage('#edu', '#edu_template');
         } else {
-          genericView.initIndexPage('#project');
+          genericView.initIndexPage('#project', '#project_template');
         }
       });
     }

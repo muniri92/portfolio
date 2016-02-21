@@ -12,15 +12,15 @@
   };
 
   // Appends the right section
-  genericView.initIndexPage = function(init) {
-    console.log(init);
+  genericView.initIndexPage = function(init, temp) {
+    console.log(init, temp);
     Generic.all.forEach(function(a) {
-      $(init).append(a.toHtml());
+      $(init).append(a.toHtml(temp));
     });
     if (init === '#project') {
       genericView.handleMainNav();
     }
   };
-
+  
   module.genericView = genericView;
 })(window);
